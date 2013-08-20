@@ -1,0 +1,39 @@
+package com.books.urlstream;
+
+import org.htmlparser.Node;
+import org.htmlparser.Parser;
+import org.htmlparser.filters.NodeClassFilter;
+import org.htmlparser.tags.LinkTag;
+import org.htmlparser.util.NodeList;
+import org.htmlparser.util.ParserException;
+
+public class testAnode
+{
+
+	/**
+	 * @param args
+	 */
+	public static void main(String[] args)
+	{
+		// TODO Auto-generated method stub
+		Parser parser=new Parser();
+		try
+		{
+			parser.setURL("http://www.qdnrb.cn/site1/qdnrb/html/2010-04/22/node_3.htm");
+			parser.setEncoding("utf-8");
+			NodeClassFilter nodefilter=new NodeClassFilter(LinkTag.class);    //先建立一个过滤<a></a>标签的过滤器
+			NodeList nodeList = parser.extractAllNodesThatMatch(nodefilter);
+			for(int i=0;i<nodeList.size();i++)
+			{
+				Node tag = nodeList.elementAt(i);
+				LinkTag link = (LinkTag)tag;
+				System.out.println(link.getText());
+			}
+		}
+		catch (ParserException e)
+		{
+			e.printStackTrace();
+		}
+	}
+
+}

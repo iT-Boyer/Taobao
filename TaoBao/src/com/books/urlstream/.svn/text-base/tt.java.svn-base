@@ -1,0 +1,16 @@
+package com.forfuture.urlstream;
+
+public class tt
+{
+
+	/**
+	 * @param args
+	 */
+	public static void main(String[] args)
+	{
+		// TODO Auto-generated method stub
+	urlconnector ucUrlconnector=new urlconnector();
+	System.out.println(ucUrlconnector.getContent("http://www.citygf.com/szb/html/2010-04/05/node_4347.asp"));
+	}
+
+}

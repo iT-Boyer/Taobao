@@ -1,0 +1,16 @@
+package com.books.urlstream;
+
+import com.forfuture.urlstream.oldurlconnector;
+
+public class testThread  extends Thread
+{
+
+	oldurlconnector uc=new oldurlconnector();
+	public void run()
+	{
+		for(int i=0;i<100;i++)
+		{
+			uc.getSaveImage("http://blog.cctv.com/attachments/upfiles/images/00/00/7F/57.jpg", "d:/����ͼƬold", this.getName()+String.valueOf(i)+".jpg");
+		}
+	}
+}
